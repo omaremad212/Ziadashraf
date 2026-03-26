@@ -1,12 +1,5 @@
 @import "tailwindcss";
 
-@theme {
-  --color-bg: #0a0a0a;
-  --color-card: #111111;
-  --color-card-hover: #161616;
-  --color-border: rgba(255, 255, 255, 0.08);
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -26,80 +19,44 @@ body {
   overflow-x: hidden;
 }
 
-/* Selection */
 ::selection {
   background: rgba(255, 255, 255, 0.15);
   color: #fff;
 }
 
-/* Marquee animations */
-@keyframes marquee-left {
+/* Marquee */
+@keyframes scroll-left {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
-@keyframes marquee-right {
+@keyframes scroll-right {
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
 
 .marquee-left {
-  animation: marquee-left 40s linear infinite;
+  animation: scroll-left 35s linear infinite;
 }
-
 .marquee-right {
-  animation: marquee-right 40s linear infinite;
+  animation: scroll-right 35s linear infinite;
 }
-
 .marquee-left-slow {
-  animation: marquee-left 80s linear infinite;
-}
-
-.marquee-right-slow {
-  animation: marquee-right 80s linear infinite;
+  animation: scroll-left 60s linear infinite;
 }
 
 .pause-hover:hover .marquee-left,
 .pause-hover:hover .marquee-right,
-.pause-hover:hover .marquee-left-slow,
-.pause-hover:hover .marquee-right-slow {
+.pause-hover:hover .marquee-left-slow {
   animation-play-state: paused;
 }
 
-/* Blob animation for hero */
-@keyframes blob-move {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(30px, -50px) scale(1.1); }
-  50% { transform: translate(-20px, 20px) scale(0.95); }
-  75% { transform: translate(20px, 30px) scale(1.05); }
-}
-
-.animate-blob {
-  animation: blob-move 20s ease-in-out infinite;
-}
-
-.animate-blob-delay {
-  animation: blob-move 20s ease-in-out infinite;
-  animation-delay: -10s;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 5px;
-}
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-::-webkit-scrollbar-thumb {
-  background: #222;
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #333;
-}
-
-/* Smooth gradient mask for marquees */
 .marquee-mask {
-  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
 }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #333; }
