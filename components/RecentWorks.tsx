@@ -16,29 +16,22 @@ const images = [
 
 export default function RecentWorks() {
   return (
-    <section className="py-28 overflow-hidden">
+    <section className="py-20 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-14 px-6"
+        className="text-center mb-10 px-8"
       >
-        <span className="text-[12px] text-white/30 uppercase tracking-[0.2em] font-medium">Gallery</span>
-        <h2 className="text-4xl md:text-[3.2rem] font-extralight mt-2 tracking-tight">Recent Works</h2>
+        <span className="text-[11px] text-white/20 uppercase tracking-[0.2em]">Gallery</span>
+        <h2 className="text-[2.2rem] md:text-[2.8rem] font-normal tracking-tight mt-2">Recent Works</h2>
       </motion.div>
 
       <div className="pause-hover marquee-mask">
         <div className="flex marquee-left-slow">
           {[...images, ...images, ...images].map((img, i) => (
-            <div
-              key={i}
-              className="shrink-0 w-[320px] h-[220px] mx-3 rounded-2xl overflow-hidden border border-white/[0.06] bg-[#111] group cursor-pointer relative"
-            >
-              <img
-                src={img.src}
-                alt={img.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+            <div key={i} className="shrink-0 w-[300px] h-[200px] mx-2 rounded-xl overflow-hidden border border-white/[0.06] bg-[#111] group cursor-pointer relative">
+              <img src={img.src} alt={img.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <span className="text-[13px] text-white/80 font-medium">{img.title}</span>
               </div>

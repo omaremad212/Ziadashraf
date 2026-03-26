@@ -30,7 +30,6 @@ const tags1 = [
   'Slide Decks', 'Copywriting', 'Brand Integrations', 'Optimization',
   'Brand Graphics', 'Brand Migration', 'Package Design', 'Branding',
 ]
-
 const tags2 = [
   'Brand Landing Pages', 'Social Media', 'Icons', 'Brand Visibility',
   'Visual Identity', 'Logo Design', 'Typography', 'Art Direction',
@@ -39,58 +38,77 @@ const tags2 = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-28">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <span className="text-[12px] text-white/30 uppercase tracking-[0.2em] font-medium">What I do</span>
-          <h2 className="text-4xl md:text-[3.2rem] font-extralight mt-2 tracking-tight">Services</h2>
-        </motion.div>
+    <section id="services" className="py-24">
+      <div className="max-w-[1300px] mx-auto px-8">
+        {/* Header with images */}
+        <div className="grid lg:grid-cols-[1fr,1fr] gap-10 mb-14 items-start">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] mb-5">
+              <span className="text-[10px] text-white/40">&#10022;</span>
+              <span className="text-[11px] text-white/30 uppercase tracking-widest">Design services</span>
+            </div>
+            <h2 className="text-[2.5rem] md:text-[3rem] font-normal tracking-tight">Services</h2>
+            <p className="text-white/30 text-[14px] mt-3 max-w-md leading-relaxed">
+              Making customers successful with expert brand identity, packaging, and creative direction.
+            </p>
+          </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
+          {/* Two small images stacked */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="grid grid-cols-2 gap-3"
+          >
+            <div className="rounded-2xl overflow-hidden bg-[#111] border border-white/[0.06] aspect-[4/3]">
+              <img src="/31cefa06_png (1).png" alt="" className="w-full h-full object-cover" />
+            </div>
+            <div className="rounded-2xl overflow-hidden bg-[#111] border border-white/[0.06] aspect-[4/3]">
+              <img src="/e42d66b0_png (1).png" alt="" className="w-full h-full object-cover" />
+            </div>
+          </motion.div>
+        </div>
+
+        {/* 4 Service cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
           {services.map((s, i) => (
             <motion.div
               key={s.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group p-7 rounded-2xl border border-white/[0.06] bg-[#111] hover:bg-[#141414] hover:border-white/[0.1] transition-all duration-500"
+              transition={{ duration: 0.5, delay: i * 0.07 }}
+              className="group p-6 rounded-2xl border border-white/[0.06] bg-[#0f0f0f] hover:bg-[#131313] hover:border-white/[0.1] transition-all duration-400"
             >
-              <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center mb-5 group-hover:bg-white/[0.08] transition-all duration-300">
-                <svg className="w-5 h-5 text-white/30 group-hover:text-white/50 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center mb-5 group-hover:bg-white/[0.07] transition-all">
+                <svg className="w-4.5 h-4.5 text-white/30 group-hover:text-white/50 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d={s.icon} />
                 </svg>
               </div>
-              <h3 className="text-[16px] font-medium mb-2.5 text-white/90">{s.title}</h3>
-              <p className="text-white/35 text-[13px] leading-[1.7]">{s.desc}</p>
+              <h3 className="text-[14px] font-semibold mb-2 text-white/80">{s.title}</h3>
+              <p className="text-white/30 text-[12px] leading-[1.7]">{s.desc}</p>
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Scrolling tag strips */}
-      <div className="space-y-3 py-8 border-y border-white/[0.04] marquee-mask">
+      {/* Scrolling tags */}
+      <div className="space-y-2.5 py-6 border-y border-white/[0.04] marquee-mask">
         <div className="flex marquee-left whitespace-nowrap">
           {[...tags1, ...tags1].map((tag, i) => (
-            <span
-              key={`t1-${i}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 mx-2 rounded-full border border-white/[0.08] bg-white/[0.03] text-[13px] text-white/40 shrink-0"
-            >
+            <span key={`t1-${i}`} className="inline-flex items-center gap-2 px-4 py-2 mx-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] text-[12px] text-white/30 shrink-0">
               {tag}
             </span>
           ))}
         </div>
         <div className="flex marquee-right whitespace-nowrap">
           {[...tags2, ...tags2].map((tag, i) => (
-            <span
-              key={`t2-${i}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 mx-2 rounded-full border border-white/[0.08] bg-white/[0.03] text-[13px] text-white/40 shrink-0"
-            >
+            <span key={`t2-${i}`} className="inline-flex items-center gap-2 px-4 py-2 mx-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] text-[12px] text-white/30 shrink-0">
               {tag}
             </span>
           ))}
