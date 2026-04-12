@@ -154,11 +154,11 @@ export default function Hero() {
           transition={{ duration: .7, delay: .45 }}
           className="mt-10 flex flex-wrap justify-center gap-4">
           <a href="#contact"
-            className="rounded-full bg-white px-8 py-3.5 text-[14px] font-medium text-black transition hover:bg-white/90">
+            className="rounded-[14px] border border-white/[.25] bg-black/40 px-8 py-3.5 text-[14px] font-medium text-white backdrop-blur-sm transition hover:bg-white/[.06] hover:border-white/40">
             Get Started Now
           </a>
           <a href="#projects"
-            className="rounded-full border border-white/[.2] px-8 py-3.5 text-[14px] font-medium text-white transition hover:bg-white/[.05]">
+            className="rounded-[14px] border border-white/[.25] bg-black/40 px-8 py-3.5 text-[14px] font-medium text-white backdrop-blur-sm transition hover:bg-white/[.06] hover:border-white/40">
             See Projects
           </a>
         </motion.div>
